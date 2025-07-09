@@ -127,3 +127,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+chmod +x pushcut_alert.py
