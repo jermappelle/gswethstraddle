@@ -2,7 +2,7 @@
 import os, requests, pandas as pd
 
 #─── CONFIG ────────────────────────────────────────────────────────────────────
-PUSH_URL = os.environ["PUSHCUT_WEBHOOK_URL"]
+PUSH_URL = os.environ https://api.pushcut.io/01M6OsxMNYMhhg4OSZugx/notifications/OpenStraddleSignal
 SUBGRAPH = "https://api.thegraph.com/subgraphs/name/ianlapham/arbitrum-minimal"
 PAIR     = "0x223292964fd10e82867d9e6c99ce62106426f204"
 #───────────────────────────────────────────────────────────────────────────────
