@@ -28,6 +28,4 @@ jobs:
         run: |
           python pushcut_alert.py
 
-git add .github
-git commit -m "Add GitHub Actions workflow"
-git push
+
