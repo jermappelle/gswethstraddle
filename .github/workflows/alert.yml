@@ -29,3 +29,7 @@ jobs:
         env:
           PUSHCUT_WEBHOOK_URL: ${{ secrets.PUSHCUT_WEBHOOK_URL }}
         run: python pushcut_alert.py
+        git add pushcut_alert.py .github/workflows/alert.yml
+git commit -m "Add daily GS/WETH straddle alert + workflow"
+git push origin main
+
