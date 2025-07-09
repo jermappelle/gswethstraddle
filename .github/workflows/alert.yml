@@ -1,2 +1,31 @@
 mkdir -p .github/workflows
 nano .github/workflows/alert.yml
+name: Daily GS/WETH Straddle Alert
+
+on:
+  schedule:
+    - cron:  '5 0 * * *'      # 00:05 UTC every day
+  workflow_dispatch:         # manual run button
+
+jobs:
+  run-alert:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas
+
+      - name: Run straddle alert
+        env:
+          PUSHCUT_WEBHOOK_URL: ${{ secrets.PUSHCUT_WEBHOOK_URL }}
+        run: python pushcut_alert.py
